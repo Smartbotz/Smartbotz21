@@ -32,14 +32,11 @@ let tags = {
   'maker': 'MENU MAKER',
   'owner': 'MENU OWNER',
   'Pengubah Suara': 'PENGUBAH SUARA',
-  'premium': 'PREMIUM MENU',
   'quotes' : 'MENU QUOTES',
   'stalk': 'MENU STALK',
   'shortlink': 'SHORT LINK',
   'tools': 'MENU TOOLS',
   'anonymous': 'ANONYMOUS CHAT',
-  'admin': 'ADMIN', 
-  '': 'NO CATEGORY',
 }
 const defaultMenu = {
   before: `

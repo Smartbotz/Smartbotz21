@@ -8,6 +8,7 @@ module.exports = {
             await m.reply(`It\'s time *${this.user.name}* to leave the group 👋`)
             await this.delay(10000) 
             await this.groupLeave(m.chat)
+            chats.expired = null
         }
     }
 }

@@ -1,17 +1,20 @@
-const fetch = require('node-fetch');
-
-let handler = async (m, { text, usedPrefix, command }) => {
-  if (!text) throw `🚩 *Masukan detail gambar!* `;
-  try {
-    conn.reply(m.chat, wait, m)
-    const res = await fetch(`https://api.botcahx.live/api/maker/text2img?text=${text}&apikey=${btc}`).then(res => res.buffer());
-    conn.sendFile(m.chat, res, 'image.jpg', `Result: ${text}`, m);
-  } catch (error) {
-    m.reply(`Error: ${eror}`);
-  }
+const fetch = require("node-fetch");
+const { writeFileSync } = require("fs");
+const path = require('path');
+let handler = async (m, { text, conn, usedPrefix, command }) => {
+  if (!text) throw `Masukkan teks untuk diubah menjadi gambar\n*Contoh:* ${usedPrefix}${command} 1girl, blush, looking to viewer, warm smile`;
+  if (!text.includes(',')) throw `Tolong gunakan prompt dengan benar. Gunakan koma *[ , ]* untuk memisahkan argumen.\n*Contoh:* ${usedPrefix}${command} 1girl, blush, looking to viewer, warm smile`;  
+  const prompt = text.split(',').join(', ');
+  const response = await fetch(`https://api.botcahx.live/api/search/stablediffusion?text=${text}&apikey=${btc}`);
+  const buffer = await response.buffer();
+  const saveFilename = path.join(__dirname, '../tmp/stablediffusion.jpg');
+  writeFileSync(saveFilename, buffer);
+  conn.sendFile(m.chat, saveFilename, null, `*Result For:* _${prompt}_`, m);
 };
-
-handler.command = handler.help = ['text2img', 'diffusion', 'stablediffusion', 'diff'];
+handler.command = handler.help = ['txt2img', 'text2img'];
 handler.tags = ['tools'];
 handler.limit = true;
+handler.private = false;
+handler.group = false;
+
 module.exports = handler;

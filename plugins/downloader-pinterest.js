@@ -1,20 +1,12 @@
-let { pinterest } = require('@bochilteam/scraper')
-
-let handler = async(m, { conn, text, usedPrefix, command }) => {
-  if (!text) throw `Gambar apa yang Anda ingin saya cari?\n\n📌 Contoh  : ${usedPrefix + command} cewek cantik`
-  const json = await pinterest(text)
-  let image = pickRandom(json)
-    let res = image
-  conn.sendFile(m.chat, res, 'pinterest.jpg', `
-*▢  Pinterest:*  ${text}
-`.trim(), m)
+let xfar = require('xfarr-api')
+let handler = async (m, { usedPrefix, command, conn, args }) => {
+	 	  if (!args[0]) throw `Gunakan format: ${usedPrefix}${command} naruto`
+xfar.Pinterest(args[0]).then(async data => {
+let pincpt = `ðŸ”—Link media : ${data.url}`
+conn.sendFile(m.chat,data.url, 'pin.jpg', pincpt,m)})
 }
 handler.help = ['pinterest <keyword>']
 handler.tags = ['internet', 'downloader']
 handler.command = /^(pinterest)$/i
 
 module.exports = handler
-
-function pickRandom(arr) {
-  return arr[Math.floor(Math.random() * arr.length)]
-}

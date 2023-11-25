@@ -20,6 +20,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     await sleep(3000)
     conn.sendFile(m.chat, i, null, `*Deskripsi:* ${title}\n*Region*: ${region}\n*ID:* ${id}\n*Audio:* ${play}`, m);
         }
+      conn.sendMessage(m.chat, { audio: { url: play }, mimetype: 'audio/mpeg' }, { quoted: m });
   } catch (e) {
     console.log(e);
     throw `🚩 *Terjadi kesalahan!*`

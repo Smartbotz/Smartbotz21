@@ -38,7 +38,7 @@ const apiColor = randomColor[Math.floor(Math.random() * randomColor.length)];
          "replyMessage": {}
       }]
    }
-   const json = await axios.post('https://bot.lyo.su/quote/generate', obj, {
+   const json = await axios.post('https://quote-api.neoxr.eu/generate', obj, {
       headers: {
          'Content-Type': 'application/json'
       }

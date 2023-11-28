@@ -4,8 +4,8 @@ let handler = async (m, { conn }) => {
   let uptimex = clockString(_uptime);
   conn.sendFile(
     m.chat,
-    "https://aemt.me/file/ZmxCYHT7HJbO.opus",
-    "ZmxCYHT7HJbO.opus",
+    "https://aemt.me/file/nN1QV1Rx45dP.opus",
+    "nN1QV1Rx45dP.opus",
     null,
     m,
     true,
@@ -25,7 +25,7 @@ let handler = async (m, { conn }) => {
           previewType: "PDF",
           sourceUrl: null,
           thumbnailUrl:
-            "https://aemt.me/file/aJy1Ctg003BM.jpg",
+            "https://aemt.me/file/G7HZ81ydjIOC.jpg",
           title: "🗿"
         }
       }

@@ -4,8 +4,8 @@ let handler = async (m, { conn }) => {
   let uptimex = clockString(_uptime);
   conn.sendFile(
     m.chat,
-    "https://aemt.me/file/rmrNoAqhgoNr.aac",
-    "rmrNoAqhgoNr.aac",
+    "https://aemt.me/file/ztxhkSc3vxIb.mp3",
+    "ztxhkSc3vxIb.mp3",
     null,
     m,
     true,

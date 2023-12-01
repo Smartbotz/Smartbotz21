@@ -39,13 +39,13 @@
 
 ### `Render`
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%2FBOTCAHX%2FRTXZY-MD)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https://github.com/Smartbotz/Smartbotz21)
 ## Base Ori
 Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
 
 ## Run On Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BOTCAHX/RTXZY-MD)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Smartbotz/Smartbotz21)
 # Heroku Buildpack
 ### Instal Buildpack
 ```bash
@@ -78,8 +78,8 @@ node index.js --pairing
 ##### All Contributors
 <a href="https://github.com/BOTCAHX"><img src="https://github.com/BOTCAHX.png?size=100" width="100" height="100"></a> | [![Erlan](https://github.com/ERLANRAHMAT.png?size=100)](https://github.com/ERLANRAHMAT) 
 ---|---
-[Tio](https://github.com/BOTCAHX)  | [Erlan](https://github.com/ERLANRAHMAT)
-Recode | Contributor |
+[Tio](https://github.com/BOTCAHX)  | [Erlan](https://github.com/ERLANRAHMAT)  | [Smartbotz (https://github.com/Smartbotz)
+Recode | Contributor | Edited
 
 ##### Special Thanks To
 <!--[![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo)

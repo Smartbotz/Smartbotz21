@@ -37,7 +37,7 @@ let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
     const add = getBinaryNodeChild(response, 'add')
     const participant = getBinaryNodeChildren(response, 'add')
     let anu = participant[0].content.filter(v => v)
-    if (anu[0].attrs.error == 408) conn.sendButton(m.chat, `Tidak dapat menambahkan @${anu[0].attrs.jid.split('@')[0]}!\nKabarnya si @${anu[0].attrs.jid.split('@')[0]} baru keluar dari grup ini :'v`, wm, 'link', usedPrefix + `link`, m)
+    if (anu[0].attrs.error == 408) conn.reply(m.chat, `Tidak dapat menambahkan @${anu[0].attrs.jid.split('@')[0]}!\nKabarnya si @${anu[0].attrs.jid.split('@')[0]} baru keluar dari grup ini :'v`, wm, 'link', usedPrefix + `link`, m)
     for (const user of participant[0].content.filter(item => item.attrs.error == 403)) {
     	const jid = user.attrs.jid
     	const content = getBinaryNodeChild(user, 'add_request')
@@ -49,7 +49,7 @@ let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
     	})
     	//await conn.delay(100)
     	//conn.sendButton(m.chat, txt, wm, 'menu', '.m', m)
-    	await conn.sendGroupV4Invite(m.chat, jid, invite_code, invite_code_exp, await conn.getName(m.chat), 'Undangan untuk bergabung ke grup WhatsApp saya', jpegThumbnail)
+    	await  conn.sendMessage(jid, {text: `KAMU DIUNDANG UNTUK MASUK GROUP\n *Link Group:* ${await conn.getName(m.chat)}\n\nhttps://chat.whatsapp.com/` + await conn.groupInviteCode(m.chat) + `\n\n${conn.user.name}`})
     }
 }
 handler.help = ['add', '+'].map(v => v + ' @user')

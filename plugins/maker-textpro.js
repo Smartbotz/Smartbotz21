@@ -78,7 +78,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'vintage') {
-      const res = `https://api.botcahx.live/api/textpro/vintage?text=${encodeURIComponent(text)}&apikey=${btc}`;
+      const res = `https://api.botcahx.live/api/textpro/vintage?text=${encodeURIComponent(text)}&text2=&apikey=${btc}`;
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'writing') {

@@ -29,9 +29,9 @@
 
 
 ## Group Bot
-- Group Bot [`Join`](https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r)
+- Group Bot [`Join`](https://chat.whatsapp.com/Lsytu8X0bC3AoyKBY9cvJE)
 
-- Group Bebas [`Join`](https://chat.whatsapp.com/JAi5AMaxdFLH0s2pH2RcUJ)
+- Group Bebas [`Join`](https://chat.whatsapp.com/Lsytu8X0bC3AoyKBY9cvJE)
 ## Support
 
 <a href="https://sociabuzz.com/tioclkp02" target="_blank"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" height="32px" alt="Sociabuzz"></a>
@@ -62,7 +62,7 @@ Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
 * Unduh & Instal ImageMagick [`Klik Disini`](https://imagemagick.org/script/download.php)
 
 ```javascript
-git clone https://github.com/BOTCAHX/RTXZY-MD
+git clone https://github.com/Smartbotz/Smartbotz21
 cd RTXZY-MD
 npm i
 npm start

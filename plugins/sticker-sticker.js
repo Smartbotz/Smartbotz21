@@ -21,7 +21,7 @@ if (/image/.test(mime)) {
 handler.help = ['sticker']
 handler.tags = ['sticker']
 handler.command = /^(stiker|s|sticker)$/i
-handler.limit = 5
+handler.limit = 3
 module.exports = handler
 
 const isUrl = (text) => {

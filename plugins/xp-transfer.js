@@ -24,7 +24,7 @@ async function handler(m, { conn, args, usedPrefix, command }) {
     if (!(who in global.db.data.users)) return m.reply(`✳️ Pengguna tidak ada dalam database saya`)
     if (user[type] * 1 < count) return m.reply(`✳️  *${type}*  tidak cukup untuk mentransfer`)
     let confirm = `
-Apakah Anda yakin ingin mentransfer *${count}* _*${type}*_ a  *@${(who || '').replace(/@s\.whatsapp\.net/g, '')}* ? 
+Apakah Anda yakin ingin mentransfer *${count}* _*${type}*_ untuk  *@${(who || '').replace(/@s\.whatsapp\.net/g, '')}* ? 
 
 - Punya  *60s* 
 _Merespon *ok* atau *no*_
@@ -60,11 +60,11 @@ handler.before = async m => {
         let _previous = _user[type] * 1
         user[type] -= count * 1
         _user[type] += count * 1
-        if (previous > user[type] * 1 && _previous < _user[type] * 1) m.reply(`✅ Pemindahan \n\n*${count}* *${type}*  a @${(to || '').replace(/@s\.whatsapp\.net/g, '')}`, null, { mentions: [to] })
+        if (previous > user[type] * 1 && _previous < _user[type] * 1) m.reply(`✅ Pemindahan Sukses \n\n*${count}* *${type}*  untuk @${(to || '').replace(/@s\.whatsapp\.net/g, '')}`, null, { mentions: [to] })
         else {
             user[type] = previous
             _user[type] = _previous
-            m.reply(`❎ Pengalihan kesalahan *${count}* ${type} a *@${(to || '').replace(/@s\.whatsapp\.net/g, '')}*`, null, { mentions: [to] })
+            m.reply(`❎ Terjadi kesalahan *${count}* ${type} untuk *@${(to || '').replace(/@s\.whatsapp\.net/g, '')}*`, null, { mentions: [to] })
         }
         clearTimeout(timeout)
         delete confirmation[sender]

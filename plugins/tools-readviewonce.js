@@ -13,6 +13,7 @@ const { downloadContentFromMessage } = require('@adiwajshing/baileys')
 let handler = async (m, { conn }) => {
   if (!m.quoted) throw 'Reply gambar/video yang ingin Anda lihat'
   if (m.quoted.mtype !== 'viewOnceMessageV2') throw 'Ini bukan pesan viewonce.'
+  try {
   let msg = m.quoted.message
   let type = Object.keys(msg)[0]
   let media = await downloadContentFromMessage(msg[type], type == 'imageMessage' ? 'image' : 'video')
@@ -25,8 +26,13 @@ let handler = async (m, { conn }) => {
   } else if (/image/.test(type)) {
     return conn.sendFile(m.chat, buffer, 'media.jpg', msg[type].caption || '', m)
   }
+ } catch {
+  let mtype = Object.keys(m.quoted.message)[0]
+	let buffer = await m.quoted.download()
+	let caption = m.quoted.message[mtype].caption || ''
+	conn.sendMessage(m.chat, { [mtype.replace(/Message/, '')]: buffer, caption }, { quoted: m })
+  }
 }
-
 handler.help = ['readvo']
 handler.tags = ['tools']
 handler.command = ['readviewonce', 'read', 'rvo', 'liat', 'readvo']

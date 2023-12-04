@@ -33,6 +33,7 @@ let handler = async (m, { conn }) => {
 	conn.sendMessage(m.chat, { [mtype.replace(/Message/, '')]: buffer, caption }, { quoted: m })
   }
 }
+
 handler.help = ['readvo']
 handler.tags = ['tools']
 handler.command = ['readviewonce', 'read', 'rvo', 'liat', 'readvo']

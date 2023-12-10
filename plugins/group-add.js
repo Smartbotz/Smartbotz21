@@ -8,6 +8,7 @@ const fetch = require('node-fetch')
 let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
 	if (!text) throw `_Masukan nomor!_\nContoh:\n\n${usedPrefix + command} ${global.owner[0]}`
 	m.reply('_Sedang di proses..._')
+	try {
     let _participants = participants.map(user => user.id)
     let users = (await Promise.all(
         text.split(',')
@@ -51,6 +52,9 @@ let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
     	//conn.sendButton(m.chat, txt, wm, 'menu', '.m', m)
     	await  conn.sendMessage(jid, {text: `KAMU DIUNDANG UNTUK MASUK GROUP\n *Link Group:* ${await conn.getName(m.chat)}\n\nhttps://chat.whatsapp.com/` + await conn.groupInviteCode(m.chat) + `\n\n${conn.user.name}`})
     }
+   } catch (e) {
+    m.reply('*🚩 Terjadi kesalahan:User tidak ditemukan atau nomor tidak valid*');
+  }
 }
 handler.help = ['add', '+'].map(v => v + ' @user')
 handler.tags = ['group']

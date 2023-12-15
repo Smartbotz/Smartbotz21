@@ -9,7 +9,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     if (!media) throw 'Media tidak dapat diunduh'
     let audio = await toAudio(media, 'mp4')
     if (!audio.data) throw 'Gagal melakukan konversi.'
-    conn.sendMessage(m.chat, {document: audio.data, mimetype: 'audio/mpeg', fileName: `audio.mp3`}, { quoted : m })
+    conn.sendMessage(m.chat, { audio: audio.data, mimetype: 'audio/mpeg' }, { quoted: m })
   }
   if (/vn|ptt$/i.test(command)) {
     if (!/video|audio/.test(mime)) throw `Balas video/audio dengan perintah *${usedPrefix + command}*`
@@ -20,8 +20,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     await conn.sendFile(m.chat, audio.data, 'file.mp4', '', m, 1, { mimetype: 'audio/mp4' })
   }
 }
-handler.help = ['tomp3', 'tovn']
+handler.help = ['tomp3', 'tovn', 'toaudio', 'toptt']
 handler.tags = ['Pengubah Suara']
-handler.command = /^to(mp3|vn|ptt)$/i
+handler.command = /^to(mp3|vn|ptt|audio)$/i
 
 module.exports = handler

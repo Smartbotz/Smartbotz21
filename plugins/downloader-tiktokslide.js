@@ -18,9 +18,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     } = res.result.data
     for (let i of res.result.data.images) {
     await sleep(3000)
-    conn.sendFile(m.chat, i, null, `*Deskripsi:* ${title}\n*Region*: ${region}\n*ID:* ${id}\n*Audio:* ${play}`, m);
+    await conn.sendFile(m.chat, i, null, `*Deskripsi:* ${title}\n*Region*: ${region}\n*ID:* ${id}\n*Audio:* ${play}`, m);
         }
-      conn.sendMessage(m.chat, { audio: { url: play }, mimetype: 'audio/mpeg' }, { quoted: m });
+     conn.sendMessage(m.chat, { audio: { url: play }, mimetype: 'audio/mpeg' }, { quoted: m });
   } catch (e) {
     console.log(e);
     throw `🚩 *Terjadi kesalahan!*`

@@ -4,7 +4,7 @@ let handler = async (m, { text }) => {
   let res = await fetch(`https://api.botcahx.live/api/search/simsimi?query=${encodeURIComponent(text)}&apikey=${btc}`)
   let json = await res.json()
   m.reply(json.result)
-  } catch {
+  } catch (e) {
   m.reply('Terjadi kesalahan')
   }
 }

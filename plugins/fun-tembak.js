@@ -80,12 +80,12 @@ let handler = async (m, { conn, text, usedPrefix }) => {
           return conn.reply(
             m.chat,
             `Kamu sudah berpacaran dengan @${
-              beb.split("@")[0]
+              global.db.data.users[m.sender].pasangan.split("@")[0]
             }\n\nsetia dong!\ndenda : ${format(denda)} (20%)`,
             m,
             {
               contextInfo: {
-                mentionedJid: [beb],
+                mentionedJid: [global.db.data.users[m.sender].pasangan],
               },
             }
           );

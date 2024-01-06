@@ -2,11 +2,11 @@ const cluster = require('cluster');
 const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
-const os = require('node:os');
+const os = require('os');
 const express = require('express');
 const app = express();
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 console.log('\x1b[33m%s\x1b[0m', `🌐 Port ${port} is open`);
 app.get('/', (req, res) => {

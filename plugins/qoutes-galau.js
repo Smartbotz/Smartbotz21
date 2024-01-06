@@ -108,5 +108,6 @@ global.galau = [
     "Balikan sama kamu itu sama saja bunuh diri dan melukai perasaan ku sendiri",
     "Tak perlu membalas dengan menyakiti biar Karma yang akan urus semua itu",
     "Aku masih ingat kamu tapi perasaanku sudah tidak sakit seperti dulu",
+    "Aku yang berjuang,namun mengapa aku yang dibuang",
     "Punya kalimat sendiri & mau ditambahin? chat *.owner*"
 ]

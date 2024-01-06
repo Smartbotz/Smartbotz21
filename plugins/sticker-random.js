@@ -8,27 +8,27 @@ var handler = async (m, {
     var error = (`https://telegra.ph/file/12141dd462ecabeed1347.png`)
     try {
         if (command == 'dinokuning' || command == 'sdino') {
-        const res = `https://api.botcahx.live/api/sticker/dinokuning?apikey=${btc}`
+        const res = `https://api.botcahx.eu.org/api/sticker/dinokuning?apikey=${btc}`
             var stiker = await sticker5(res, { packname })
             await conn.sendFile(m.chat, stiker, 'emror.webp', '', m)
         }
         else if (command == 'patrick' || command == 'spatrick') {
-        const res = `https://api.botcahx.live/api/sticker/patrick?apikey=${btc}`
+        const res = `https://api.botcahx.eu.org/api/sticker/patrick?apikey=${btc}`
             var stiker = await sticker5(res, { packname })
             await conn.sendFile(m.chat, stiker, 'emror.webp', '', m)
         }
         else if (command == 'spongebob' || command == 'sspongebob') {
-        const res = `https://api.botcahx.live/api/sticker/spongebob?apikey=${btc}`
+        const res = `https://api.botcahx.eu.org/api/sticker/spongebob?apikey=${btc}`
             var stiker = await sticker5(res, { packname })
             await conn.sendFile(m.chat, stiker, 'emror.webp', '', m)
         }
         else if (command == 'doge' || command == 'sdoge') {
-        const res = `https://api.botcahx.live/api/sticker/doge?apikey=${btc}`
+        const res = `https://api.botcahx.eu.org/api/sticker/doge?apikey=${btc}`
             var stiker = await sticker5(res, { packname })
             await conn.sendFile(m.chat, stiker, 'emror.webp', '', m)
         }
         else if (command == 'manusialidi' || command == 'smanusialidi') {
-        const res = `https://api.botcahx.live/api/sticker/manusialidi?apikey=${btc}`
+        const res = `https://api.botcahx.eu.org/api/sticker/manusialidi?apikey=${btc}`
             var stiker = await sticker5(res, { packname })
             await conn.sendFile(m.chat, stiker, 'emror.webp', '', m)
         }

@@ -26,12 +26,13 @@ let handler = async (m, { conn }) => {
   } else if (/image/.test(type)) {
     return conn.sendFile(m.chat, buffer, 'media.jpg', msg[type].caption || '', m)
   }
- } catch {
-  let mtype = Object.keys(m.quoted.message)[0]
-	let buffer = await m.quoted.download()
+} catch {
+	const q = m.quoted ? m.quoted : m;
+	let mtype = Object.keys(m.quoted.message)[0]
+	let buffer = await q.download()
 	let caption = m.quoted.message[mtype].caption || ''
 	conn.sendMessage(m.chat, { [mtype.replace(/Message/, '')]: buffer, caption }, { quoted: m })
-  }
+	}
 }
 
 handler.help = ['readvo']

@@ -10,13 +10,13 @@ let handler = async (m, { conn, usedPrefix, command }) => {
       const out = await uploadImage(img);
       m.reply(wait);
       if (command === 'hd') {
-        const api = await fetch(`https://api.botcahx.live/api/tools/remini?url=${out}&apikey=${btc}`);
+        const api = await fetch(`https://api.botcahx.eu.org/api/tools/remini?url=${out}&apikey=${btc}`);
         const image = await api.json();
         const { url } = image;
         conn.sendFile(m.chat, url, null, wm, m);
       } else if (command === 'hd2') {       
         try {
-          const api = await fetch(`https://api.botcahx.live/api/tools/remini-v2?url=${out}&apikey=${btc}`);
+          const api = await fetch(`https://api.botcahx.eu.org/api/tools/remini-v2?url=${out}&apikey=${btc}`);
           const response = await api.text();
           let image;
           try {
@@ -31,12 +31,12 @@ let handler = async (m, { conn, usedPrefix, command }) => {
           throw error;
         }
       } else if (command === 'hd3') {
-        const api = await fetch(`https://api.botcahx.live/api/tools/remini-v3?url=${out}&resolusi=4&apikey=${btc}`);
+        const api = await fetch(`https://api.botcahx.eu.org/api/tools/remini-v3?url=${out}&resolusi=4&apikey=${btc}`);
         const image = await api.json();
         const url = image.url;
         conn.sendFile(m.chat, url, null, wm, m);
        } else if (command === 'removebg' || command === 'nobg') {
-        const api = await fetch(`https://api.botcahx.live/api/tools/removebg?url=${out}&apikey=${btc}`);
+        const api = await fetch(`https://api.botcahx.eu.org/api/tools/removebg?url=${out}&apikey=${btc}`);
         const image = await api.json();
         const url = image.url.result;
         conn.sendFile(m.chat, url, null, wm, m);

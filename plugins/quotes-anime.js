@@ -2,7 +2,7 @@ let fetch = require('node-fetch');
 let handler = async (m, { conn }) => {
   try {
     // Fetch data dari api
-    let res = await fetch(`https://api.botcahx.live/api/random/quotesanime?apikey=${btc}`);
+    let res = await fetch(`https://api.botcahx.eu.org/api/random/quotesanime?apikey=${btc}`);
     let json = await res.json();
 
     // check data jika valid respom

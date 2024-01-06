@@ -4,7 +4,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     if (!args[0]) throw `Masukkan apa yang ingin Anda telusuri \n\n📌*Contoh:*\n${usedPrefix + command} homero`
     
     try {
-   const api = await fetch(`https://api.botcahx.live/api/search/sticker?text1=${args[0]}&apikey=${btc}`)
+   const api = await fetch(`https://api.botcahx.eu.org/api/search/sticker?text1=${args[0]}&apikey=${btc}`)
    const res = await api.json()
     m.reply(`
 ✅ Hasil

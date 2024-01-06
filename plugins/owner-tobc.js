@@ -1,16 +1,16 @@
 const { randomBytes } = require('crypto')
 
 let handler = async (m, { conn, text }) => {
-  let chats = Object.entries(conn.chats).filter(([_, chat]) => chat.isChats).map(v => v[0])
+  let chats = Object.keys(await conn.chats)
   let cc = conn.serializeM(text ? m : m.quoted ? await m.getQuotedObj() : false || m)
   let teks = text ? text : cc.text
   conn.reply(m.chat, `✅ Transmisi dibuat *Total:* ${chats.length} chats`, m)
   for (let id of chats) {
-await sleep(2000) 
+  	await sleep(2000) 
  conn.copyNForward(id, cc, /bc|broadcast|tx/i.test(teks) ? teks : `*BROADCAST┃ OWNER*\n_____________________\n ${teks} ` ).catch(_ => _)
  }
   m.reply('✅ Sukses broadcast ke semua chat :)')
-  }
+}
 handler.help = ['tobc >reply media<']
 handler.tags = ['owner']
 handler.command = /^(tobc|tx)$/i

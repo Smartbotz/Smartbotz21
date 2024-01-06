@@ -8,7 +8,7 @@ async function handler(m, { conn, usedPrefix, command }) {
     if (/^image/.test(mime) && !/webp/.test(mime)) {
       const img = await q.download();
       const out = await uploadImage(img);
-      const api = await fetch(`https://api.botcahx.live/api/tools/remini?url=${out}&apikey=${btc}`);
+      const api = await fetch(`https://api.botcahx.eu.org/api/tools/remini?url=${out}&apikey=${btc}`);
       const image = await api.json();
       const { url } = image 
        conn.sendFile(m.chat, url, null, wm, m);

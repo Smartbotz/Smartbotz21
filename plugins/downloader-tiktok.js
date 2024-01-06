@@ -9,7 +9,7 @@ try {
       throw `URL Tidak Ditemukan!`
     }
     m.reply('*Mohon tunggu..*')
-    const api = await https.get(`https://api.botcahx.live/api/dowloader/tiktok?url=${args[0]}&apikey=${btc}`, response => {
+    const api = await https.get(`https://api.botcahx.eu.org/api/dowloader/tiktok?url=${args[0]}&apikey=${btc}`, response => {
       let data = '';
       response.on('data', chunk => {
         data += chunk;

@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   }
   try {
     m.reply(wait);
-    const api = await fetch(`https://api.botcahx.live/api/download/pinterest?url=${args[0]}&apikey=${btc}`);
+    const api = await fetch(`https://api.botcahx.eu.org/api/download/pinterest?url=${args[0]}&apikey=${btc}`);
     const res = await api.json();
     let { media_type, image, title } = res.result.data;
     if (media_type === 'video/mp4') {

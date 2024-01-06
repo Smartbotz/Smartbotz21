@@ -1,13 +1,13 @@
 let handler = async(m, { conn }) => {
   const asupan = [
-    `https://api.botcahx.live/api/asupan/rikagusriani?apikey=${btc}`,
-    `https://api.botcahx.live/api/asupan/santuy?apikey=${btc}`,
-    `https://api.botcahx.live/api/asupan/ukhty?apikey=${btc}`,
-    `https://api.botcahx.live/api/asupan/bocil?apikey=${btc}`,
-    `https://api.botcahx.live/api/asupan/gheayubi?apikey=${btc}`,
-    `https://api.botcahx.live/api/asupan/natajadeh?apikey=${btc}`,
-    `https://api.botcahx.live/api/asupan/euni?apikey=${btc}`,
-    `https://api.botcahx.live/api/asupan/douyin?apikey=${btc}`
+    `https://api.botcahx.eu.org/api/asupan/rikagusriani?apikey=${btc}`,
+    `https://api.botcahx.eu.org/api/asupan/santuy?apikey=${btc}`,
+    `https://api.botcahx.eu.org/api/asupan/ukhty?apikey=${btc}`,
+    `https://api.botcahx.eu.org/api/asupan/bocil?apikey=${btc}`,
+    `https://api.botcahx.eu.org/api/asupan/gheayubi?apikey=${btc}`,
+    `https://api.botcahx.eu.org/api/asupan/natajadeh?apikey=${btc}`,
+    `https://api.botcahx.eu.org/api/asupan/euni?apikey=${btc}`,
+    `https://api.botcahx.eu.org/api/asupan/douyin?apikey=${btc}`
   ]
   try {
     const url = pickRandom(asupan);

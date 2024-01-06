@@ -7,7 +7,7 @@ var handler = async (m, {
 if (!text) throw `Masukkan pertanyaan!\n\n*Contoh:* Siapa presiden Indonesia? `
 try {
   await m.reply(wait)
-  var apii = await fetch(`https://api.botcahx.live/api/search/bard-ai?apikey=${btc}&text=${text}`)
+  var apii = await fetch(`https://api.botcahx.eu.org/api/search/bard-ai?apikey=${btc}&text=${text}`)
   var res = await apii.json()
   await m.reply(res.message)
 } catch (err) {

@@ -25,7 +25,7 @@ let handler = async (m, { conn }) => {
           previewType: "PDF",
           sourceUrl: null,
           thumbnailUrl:
-            "https://aemt.me/file/G7HZ81ydjIOC.jpg",
+            "https://i.pinimg.com/originals/46/c1/44/46c144d496b2786dbbc96479f562196f.jpg",
           title: "🗿"
         }
       }

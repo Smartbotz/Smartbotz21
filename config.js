@@ -15,18 +15,18 @@ global.author = 'fdls'
 global.maxwarn = '2' // Peringatan maksimum
 
 //INI WAJIB DI ISI!//
-global.btc = 'Smartbotz' 
-//Daftar terlebih dahulu https://api.botcahx.live
+global.btc = 'Smartbot5' 
+//Daftar terlebih dahulu https://api.botcahx.eu.org
 
 //INI OPTIONAL BOLEH DI ISI BOLEH JUGA ENGGA//
 global.lann = 'Smartbotz'
 //Daftar https://api.betabotz.org 
 
 global.APIs = {   
-  btc: 'https://api.botcahx.live'
+  btc: 'https://api.botcahx.eu.org'
 }
 global.APIKeys = { 
-  'https://api.botcahx.live': 'APIKEY' 
+  'https://api.botcahx.eu.org': 'APIKEY' 
 }
 
 let fs = require('fs')

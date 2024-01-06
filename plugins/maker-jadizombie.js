@@ -13,7 +13,7 @@ command
 			const img = await q.download?.()
 			let out = await uploadImage(img)
 			let old = new Date()
-			let res = await fetch(`https://api.botcahx.live/api/maker/jadizombie?url=${out}&apikey=${btc}`)
+			let res = await fetch(`https://api.botcahx.eu.org/api/maker/jadizombie?url=${out}&apikey=${btc}`)
 			let convert = await res.json()
 			let buff = await fetch(convert.result)
   .then(res => res.buffer())

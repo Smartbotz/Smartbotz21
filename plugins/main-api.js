@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 let handler = async (m, { text }) => {
 if (!text) throw `Masukan Apikey!`
   try {
-    let api = await fetch(`https://api.botcahx.live/api/checkkey?apikey=${text}`)
+    let api = await fetch(`https://api.botcahx.eu.org/api/checkkey?apikey=${text}`)
     let body = await api.text()
     m.reply(body)  
   } catch (e) {

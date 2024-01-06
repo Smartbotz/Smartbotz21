@@ -50,11 +50,11 @@ let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
     	})
     	//await conn.delay(100)
     	//conn.sendButton(m.chat, txt, wm, 'menu', '.m', m)
-    	await  conn.sendMessage(jid, {text: `KAMU DIUNDANG UNTUK MASUK GROUP\n *Link Group:* ${await conn.getName(m.chat)}\n\nhttps://chat.whatsapp.com/` + await conn.groupInviteCode(m.chat) + `\n\n${conn.user.name}`})
+      await  conn.sendMessage(jid, {text: `KAMU DIUNDANG UNTUK MASUK GROUP\n *Link Group:* ${await conn.getName(m.chat)}\n\nhttps://chat.whatsapp.com/` + await conn.groupInviteCode(m.chat) + `\n\n${conn.user.name}`})
     }
-   } catch (e) {
+    } catch (e) {
     m.reply('*🚩 Terjadi kesalahan:User tidak ditemukan atau nomor tidak valid*');
-  }
+    }
 }
 handler.help = ['add', '+'].map(v => v + ' @user')
 handler.tags = ['group']

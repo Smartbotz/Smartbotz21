@@ -8,7 +8,7 @@ let handler = async (m, {
 	var [from, to] = text.split`|`
 	if (!(from && to)) throw `Ex: ${usedPrefix + command} jakarta|bandung`
 	try {
-	let data = await fetch(`https://api.botcahx.live/api/search/jarak?from=${from}&to=${to}&apikey=${btc}`)
+	let data = await fetch(`https://api.botcahx.eu.org/api/search/jarak?from=${from}&to=${to}&apikey=${btc}`)
 	let json = await data.json()
 	await conn.sendFile(m.chat, json.message.data, 'jarak.png', json.message.desc, m)
 	  } catch (error) {

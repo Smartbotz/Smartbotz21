@@ -3,7 +3,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
   if (!text) throw `*🚩 Contoh:* ${usedPrefix + command} throne of seal`;  
   let teks = '';
     try {
-        const api = await fetch(`https://api.botcahx.live/api/webzone/donghua?query=${text}&apikey=${btc}`);
+        const api = await fetch(`https://api.botcahx.eu.org/api/webzone/donghua?query=${text}&apikey=${btc}`);
         let json = await api.json();
         let res = json.result.data;
         for (let i in res) {

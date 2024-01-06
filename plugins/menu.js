@@ -37,6 +37,7 @@ let tags = {
   'shortlink': 'SHORT LINK',
   'tools': 'MENU TOOLS',
   'anonymous': 'ANONYMOUS CHAT',
+  '': 'NO CATEGORY',
 }
 const defaultMenu = {
   before: `

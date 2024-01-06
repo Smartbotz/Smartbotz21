@@ -2,7 +2,7 @@ var axios = require('axios');
 var handler = async (m, { conn }) => {
 try {
 var dataGempa = [];
-  var response = await axios.get(`https://api.botcahx.live/api/search/gempa?apikey=${btc}`);
+  var response = await axios.get(`https://api.botcahx.eu.org/api/search/gempa?apikey=${btc}`);
   var res = response.data;
   var gambar = res.result.Map;
   dataGempa.push({

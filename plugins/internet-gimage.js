@@ -2,10 +2,14 @@ const { googleImage } = require('@bochilteam/scraper')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `Use example ${usedPrefix}${command} Minecraft`
+    try {
     const res = await googleImage(text)
     let image = pickRandom(res)
     let link = image
     conn.sendFile(m.chat, link, 'google.jpg', `*G O O G L E*\n*Result:* ${text}\n*Source:* https://google.com`, m)
+    } catch (e) {
+  m.reply('Gagal dalam menemukan gambar')
+  }
 }
 handler.help = ['gimage <query>', 'image <query>']
 handler.tags = ['internet']

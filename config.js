@@ -15,11 +15,11 @@ global.author = 'fdls'
 global.maxwarn = '2' // Peringatan maksimum
 
 //INI WAJIB DI ISI!//
-global.btc = 'Smartbot5' 
+global.btc = 'Your apikey' 
 //Daftar terlebih dahulu https://api.botcahx.eu.org
 
 //INI OPTIONAL BOLEH DI ISI BOLEH JUGA ENGGA//
-global.lann = 'Smartbotz'
+global.lann = 'Your apikey'
 //Daftar https://api.betabotz.org 
 
 global.APIs = {   

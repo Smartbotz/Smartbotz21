@@ -7,27 +7,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     return number.replace(/\s/g,'').replace(/([@+-])/g,'')
   }
 
-	text = no(text)
-
-  if(isNaN(text)) {
-		var number = text.split`@`[1]
-  } else if(!isNaN(text)) {
-		var number = text
-  }
+let who
+    if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
+    else who = m.sender
   
-   if(!text && !m.quoted) return conn.reply(m.chat, `*❏ GET NUMBER*\n\n• \`\`\`\Tag user:\`\`\`\ *${usedPrefix}profile @Tag*\n• \`\`\`\Type number:\`\`\`\ *${usedPrefix}profile 6289654360447*\n• \`\`\`\Check my profile:\`\`\`\ *(Balas / Reply Pesan Anda Sendiri)*\n• \`\`\`\Reply user which want in\`\`\`\  _*STALKING*_`, m)
-    if(isNaN(number)) return conn.reply(m.chat, `*❏ GET NUMBER*\n\n• \`\`\`\Tag user:\`\`\`\ *${usedPrefix}profile @Tag*\n• \`\`\`\Type number:\`\`\`\ *${usedPrefix}profile 6289654360447*\n• \`\`\`\Check my profile:\`\`\`\ *(Balas / Reply Pesan Anda Sendiri)*\n• \`\`\`\Reply user which want in\`\`\`\  _*STALKING*_`, m)
-    if(number.length > 15) return conn.reply(m.chat, `*❏ GET NUMBER*\n\n• \`\`\`\Tag user:\`\`\`\ *${usedPrefix}profile @Tag*\n• \`\`\`\Type number:\`\`\`\ *${usedPrefix}profile 6289654360447*\n• \`\`\`\Check my profile:\`\`\`\ *(Balas / Reply Pesan Anda Sendiri)*\n• \`\`\`\Reply user which want in\`\`\`\  _*STALKING*_`, m) 
+
  let pp = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXIdvC1Q4WL7_zA6cJm3yileyBT2OsWhBb9Q&usqp=CAU'
   try {
-  	//pp = await conn.updateProfilePicture(text)
-		if(text) {
-			var who = number + '@s.whatsapp.net'
-		} else if(m.quoted.sender) {
-			var who = m.quoted.sender
-		} else if(m.mentionedJid) {
-  		  var who = number + '@s.whatsapp.net'
-			} 
+  	//pp = await conn.updateProfilePicture(who)
 			//let pp = './src/avatar_contact.png'
 			pp = await conn.profilePictureUrl(who, 'image')
 		} catch (e) {

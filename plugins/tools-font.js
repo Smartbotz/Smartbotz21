@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let handler = async (m, { text, usedPrefix, command }) => {
     if (!text) throw `contoh:\n${usedPrefix + command} botcahx`
-    
+    try {
     let json = await fetch(`https://api.botcahx.eu.org/api/tools/styletext?text=${text}&apikey=${btc}`)
     let data = await json.json()
     let caption = ""
@@ -10,6 +10,9 @@ let handler = async (m, { text, usedPrefix, command }) => {
 ${x.result}\n`
     }
     return m.reply(caption)
+    } catch (e) {
+     m.reply('Terjadi error atau Format salah')
+     }
 }
 
 handler.help = ['font','styletext'].map(v => v + ' <text>')

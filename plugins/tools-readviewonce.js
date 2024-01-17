@@ -1,17 +1,7 @@
-/* 
-Script By Reelly XD
-  • YT: ReellyXD
-  • IG: reellyxd
-Buy Script? 
-  • WA: +62 857-0436-85323
-  • TELE: t.me/rely_xd
-  • Github: github.com/ReellyXD
-*/
-
 const { downloadContentFromMessage } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn }) => {
-  const q = m.quoted ? m.quoted : m
+	const q = m.quoted ? m.quoted : m
   if (!m.quoted) throw 'Reply gambar/video yang ingin Anda lihat'
   if (m.quoted.mtype !== 'viewOnceMessageV2') throw 'Ini bukan pesan viewonce.'
   try {
@@ -29,7 +19,6 @@ let handler = async (m, { conn }) => {
   }
 } catch (e) {
 	let mtype = Object.keys(m.quoted.message)[0]
-	let buffer = await q.download()
 	let caption = m.quoted.message[mtype].caption || ''
 	conn.sendMessage(m.chat, { [mtype.replace(/Message/, '')]: buffer, caption }, { quoted: m })
 	}

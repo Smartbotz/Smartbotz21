@@ -7,10 +7,12 @@ let handler = async (m, { conn, args }) => {
 		if (m.isGroup && res.length > 10) {
 			await m.reply('Number of stickers more than 10, bot will send it in private chat.')
 			for (let i = 0; i < res.length; i++) {
+				await sleep(1500)
 				conn.sendMessage(m.sender, { sticker: { url: res[i].url }})
 			}
 		} else {
 			for (let i = 0; i < res.length; i++) {
+				await sleep(1500)
 				conn.sendMessage(m.chat, { sticker: { url: res[i].url }})
 			}
 		}
@@ -22,6 +24,10 @@ handler.command = /^(telestic?ker|stic?kertele)$/i
 handler.limit = true
 
 module.exports = handler
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 //Thanks Xfarr : https://github.com/xfar05
 async function Telesticker(url) {

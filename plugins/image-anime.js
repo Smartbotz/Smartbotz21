@@ -2,7 +2,7 @@ const axios = require('axios');
 var handler = async (m, { conn, args, usedPrefix, command }) => {
     m.reply(wait);
     try {
-    let url = `https://api.botcahx.live/api/anime/${command}?apikey=${btc}`;
+    let url = `https://api.botcahx.eu.org/api/anime/${command}?apikey=${btc}`;
     let response = await axios.get(url, { responseType: 'arraybuffer' });
     conn.sendFile(m.chat, response.data, "", "", m);
     } catch (e) {

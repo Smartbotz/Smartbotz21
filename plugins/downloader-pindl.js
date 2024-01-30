@@ -13,7 +13,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     const res = await api.json();
     let { media_type, image, title } = res.result.data;
     if (media_type === 'video/mp4') {
-      await conn.sendMessage(m.chat, { video: { url: image } });
+      await conn.sendMessage(m.chat, { video: { url: image } }, { quoted: m });
     } else {
       conn.sendFile(m.chat, image, 'pindl.jpeg', `*Title:* ${title}\n*Mediatype:* ${media_type}\n*Source Url*: ${image}\n`, m);
     }

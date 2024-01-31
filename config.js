@@ -12,14 +12,15 @@ global.eror = '_*Server Error,Coba lagi*_'
 global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
 global.packname = 'SmartBotz'
 global.author = 'fdls'
+global.autobio = true // Set true untuk mengaktifkan autobio
 global.maxwarn = '2' // Peringatan maksimum
 
 //INI WAJIB DI ISI!//
-global.btc = 'Your apikey' 
+global.btc = 'Smartbotz5' 
 //Daftar terlebih dahulu https://api.botcahx.eu.org
 
 //INI OPTIONAL BOLEH DI ISI BOLEH JUGA ENGGA//
-global.lann = 'Your apikey'
+global.lann = 'Smartbotz'
 //Daftar https://api.betabotz.org 
 
 global.APIs = {   

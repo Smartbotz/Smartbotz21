@@ -41,6 +41,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['asupantiktok'].map(v => v + ' <username>');
 handler.tags = ['downloader'];
 handler.command = /^(asupantiktok)$/i;
-handler.limit = true;
+handler.limit = 5;
 
 module.exports = handler;

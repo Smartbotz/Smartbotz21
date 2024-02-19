@@ -20,7 +20,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 handler.help = ['krakendownload'].map(v => v + ' <url>');
 handler.tags = ['downloader'];
 handler.command =  /^(krakendl|krakendownload)$/i
-handler.limit = true;
+handler.limit = 5;
 handler.register = false;
 handler.premium = false;
 

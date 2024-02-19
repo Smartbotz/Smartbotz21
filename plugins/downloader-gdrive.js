@@ -12,5 +12,5 @@ let handler = async (m, { text, usedPrefix, command }) => {
 }
 handler.command = handler.help = ['gdrive','gdrivedl']
 handler.tags = ['downloader']
-handler.limit = true
+handler.limit = 5
 module.exports = handler

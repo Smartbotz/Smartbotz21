@@ -15,7 +15,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (media_type === 'video/mp4') {
       await conn.sendMessage(m.chat, { video: { url: image } }, { quoted: m });
     } else {
-      conn.sendFile(m.chat, image, 'pindl.jpeg', `*Title:* ${title}\n*Mediatype:* ${media_type}\n*Source Url*: ${image}\n`, m);
+      conn.sendMessage(m.chat, { image: { url: image }, caption:`*Title:* ${title}\n*Mediatype:* ${media_type}\n*Source Url*: ${image}\n`}, { quoted: m });
     }
   } catch (e) {
     console.log(e);
@@ -26,7 +26,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['pindl'];
 handler.command = /^(pindl|pin)$/i;
 handler.tags = ['downloader'];
-handler.limit = true;
+handler.limit = 5;
 handler.premium = false;
 
 module.exports = handler;

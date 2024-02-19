@@ -22,6 +22,7 @@ handler.help = ['asupan']
 handler.tags = ['downloader']
 handler.command = /^asupan$/i
 handler.owner = false
+handler.limit = 5
 handler.premium = false
 handler.group = false
 handler.private = false

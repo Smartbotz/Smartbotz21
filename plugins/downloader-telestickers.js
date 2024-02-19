@@ -21,7 +21,7 @@ let handler = async (m, { conn, args }) => {
 handler.help = ['telesticker']
 handler.tags = ['downloader']
 handler.command = /^(telestic?ker|stic?kertele)$/i
-handler.limit = true
+handler.limit = 5
 
 module.exports = handler
 

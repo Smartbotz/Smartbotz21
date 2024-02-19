@@ -22,7 +22,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['facebook'].map(v => v + ' <url>');
 handler.command = /^(fb|facebook|facebookdl|fbdl|fbdown|dlfb)$/i;
 handler.tags = ['downloader'];
-handler.limit = true;
+handler.limit = 5;
 handler.group = false;
 handler.premium = false;
 handler.owner = false;

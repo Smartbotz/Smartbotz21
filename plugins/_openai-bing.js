@@ -50,7 +50,7 @@ let handler = async (m, {
         await conn.sendFile(m.chat, img, 'bing_img.png', `*PROMPT:* ${text}`, m)
       }
     } catch (error) {
-      throw `Error: ${eror}`
+      throw `${eror}`
     }
   }
 }

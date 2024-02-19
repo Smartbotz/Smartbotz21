@@ -22,8 +22,8 @@ try {
           title_audio,
           audio
         } = res.result
-       await conn.sendFile(m.chat, video, null, `Title: ${title}\nDeskripsi: ${title_audio}\nAudio: ${audio[1]}`, m);
-        conn.sendMessage(m.chat, { audio: { url: audio[1] }, mimetype: 'audio/mpeg' }, { quoted: m });
+        await conn.sendFile(m.chat, video, null, `Title: ${title}\nDeskripsi: ${title_audio}\nAudio: ${audio[0]}`, m);
+          conn.sendMessage(m.chat, { audio: { url: audio[0] }, mimetype: 'audio/mpeg' }, { quoted: m });
       });
     }).on('error', error => {
       console.log(error);
@@ -38,7 +38,7 @@ try {
 handler.help = ['tiktok'];
 handler.command = /^(tiktok|tt|tiktokdl|tiktoknowm)$/i
 handler.tags = ['downloader'];
-handler.limit = 5;
+handler.limit = true;
 handler.group = false;
 handler.premium = false;
 handler.owner = false;

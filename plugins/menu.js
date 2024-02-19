@@ -153,10 +153,12 @@ text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ?
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
       level, limit, name, weton, week, date, dateIslamic, wib, wit, wita, time, totalreg, rtotalreg, role
     }
+    let ftrol = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 9999999999, status: 1, thumbnail: await conn.resize('https://telegra.ph/file/cca49a5059f103169e063.jpg',300,150), surface: 1, message: 'SMARTBOTZ', orderTitle: wm, sellerJid: '0@s.whatsapp.net' } } }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-  conn.relayMessage(m.chat, {
-  extendedTextMessage:{
-                text: text, 
+  conn.sendMessage(m.chat, {
+  	video: { url: "https://telegra.ph/file/234468c7962451d8741ac.mp4"},
+      gifPlayback: true,
+         caption: text,
                 contextInfo: {
                 	mentionedJid: [m.sender],
                      externalAdReply: {
@@ -168,7 +170,7 @@ text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ?
                         sourceUrl: 'https://chat.whatsapp.com/Lsytu8X0bC3AoyKBY9cvJE'
                     }
                 }, mentions: [m.sender]
-}}, {})
+}, {quoted: ftrol})
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
